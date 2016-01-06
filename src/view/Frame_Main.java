@@ -25,6 +25,10 @@ public class Frame_Main extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		
+		Frame_Stats fm =new Frame_Stats();
+		fm.setVisible(true);
+		
 	}
 
 }
