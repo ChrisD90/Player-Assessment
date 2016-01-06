@@ -1,6 +1,14 @@
 package control;
 
+import java.util.LinkedList;
+
+import model.Player;
+
 public class Players_DB {
 
-	//vl zunächst über lokale File
+	LinkedList <Player> players = new LinkedList <Player>();
+	
+	public void addPlayer(Player player) {
+		players.add(player);
+	}
 }
