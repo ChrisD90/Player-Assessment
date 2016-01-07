@@ -3,17 +3,13 @@
  */
 package model;
 
-import java.util.HashMap;
 
 /**
  * @author Christoph
  *
  */
-public class Player {
+public class Player{
 
-	/*// alles läuft über double
-	String name;
-	String prename;
 
 	double total;
 
@@ -23,30 +19,96 @@ public class Player {
 	double dribbling;
 	double beidfüssigkeit;
 	double kopfball;
-	double schusstechnik;*/
+	double schusstechnik;
 
-	// in HashMap speichern
+	String name;
+	String prename;
 
-	HashMap<String, Double> hashmap = new HashMap<String, Double>();
-
-	public Player(String name, String prename, double total, double technik,
-			double ballan_mitnahme, double passspiel, double dribbling,
-			double beidfüssigkeit, double kopfball, double schusstechnik) {
+	public Player(String name, String prename) {
 		
-		hashmap.put("Total", total);
-		hashmap.put("Technik", technik);
-		hashmap.put("Ballan_Mitnahme", ballan_mitnahme);
-		hashmap.put("Passspiel", passspiel);
-		hashmap.put("Dribbling", dribbling);
-		hashmap.put("Beidfüssigkeit", beidfüssigkeit);
-		hashmap.put("Kopfball", kopfball);
-		hashmap.put("Schusstechnik", schusstechnik);
+		this.name = name;
+		this.prename = name;
 		
 	}
 	
-	public HashMap returnHashMap() {
-		
-		return hashmap;
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+	public double getTechnik() {
+		return technik;
+	}
+
+	public void setTechnik(double technik) {
+		this.technik = technik;
+	}
+
+	public double getBallan_mitnahme() {
+		return ballan_mitnahme;
+	}
+
+	public void setBallan_mitnahme(double ballan_mitnahme) {
+		this.ballan_mitnahme = ballan_mitnahme;
+	}
+
+	public double getPassspiel() {
+		return passspiel;
+	}
+
+	public void setPassspiel(double passspiel) {
+		this.passspiel = passspiel;
+	}
+
+	public double getDribbling() {
+		return dribbling;
+	}
+
+	public void setDribbling(double dribbling) {
+		this.dribbling = dribbling;
+	}
+
+	public double getBeidfüssigkeit() {
+		return beidfüssigkeit;
+	}
+
+	public void setBeidfüssigkeit(double beidfüssigkeit) {
+		this.beidfüssigkeit = beidfüssigkeit;
+	}
+
+	public double getKopfball() {
+		return kopfball;
+	}
+
+	public void setKopfball(double kopfball) {
+		this.kopfball = kopfball;
+	}
+
+	public double getSchusstechnik() {
+		return schusstechnik;
+	}
+
+	public void setSchusstechnik(double schusstechnik) {
+		this.schusstechnik = schusstechnik;
+	}
+
+	public String getPrename() {
+		return prename;
+	}
+
+	public void setPrename(String prename) {
+		this.prename = prename;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 }

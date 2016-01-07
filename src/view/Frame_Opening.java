@@ -12,17 +12,19 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
+import control.Players_DB;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
 public class Frame_Opening extends JFrame {
 
-
 	/**
 	 * Create the dialog.
 	 */
 	public Frame_Opening() {
+				
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Frame_Opening.class.getResource("/ressources/Logo1.png")));
 		setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);

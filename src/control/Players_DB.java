@@ -6,9 +6,15 @@ import model.Player;
 
 public class Players_DB {
 
-	LinkedList <Player> players = new LinkedList <Player>();
+	LinkedList <Player> players;
+	
+	public Players_DB() {
+		players = new LinkedList <Player>();
+	}
 	
 	public void addPlayer(Player player) {
 		players.add(player);
 	}
+	
+	
 }
