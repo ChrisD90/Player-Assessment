@@ -12,8 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
-import control.Players_DB;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
@@ -24,9 +22,10 @@ public class Frame_Opening extends JFrame {
 	 * Create the dialog.
 	 */
 	public Frame_Opening() {
-				
+
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Frame_Opening.class.getResource("/ressources/Logo1.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				Frame_Opening.class.getResource("/ressources/Logo1.png")));
 		setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
 		setBounds(100, 100, 580, 349);
 		getContentPane().setLayout(null);
@@ -59,10 +58,11 @@ public class Frame_Opening extends JFrame {
 				buttonPane.add(cancelButton);
 			}
 		}
-		
+
 		JLabel lblPic = new JLabel("pic");
 		lblPic.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPic.setIcon(new ImageIcon(Frame_Opening.class.getResource("/ressources/Logo5.png")));
+		lblPic.setIcon(new ImageIcon(Frame_Opening.class
+				.getResource("/ressources/Logo5.png")));
 		lblPic.setBounds(0, -47, 588, 301);
 		getContentPane().add(lblPic);
 	}

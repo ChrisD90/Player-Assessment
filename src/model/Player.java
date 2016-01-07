@@ -3,12 +3,14 @@
  */
 package model;
 
+import java.io.Serializable;
+
 
 /**
  * @author Christoph
  *
  */
-public class Player{
+public class Player implements Serializable{
 
 
 	double total;
