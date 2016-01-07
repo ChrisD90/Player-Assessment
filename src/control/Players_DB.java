@@ -16,5 +16,13 @@ public class Players_DB {
 		players.add(player);
 	}
 	
+	public int getSize() {
+		return players.size();
+	}
 	
+	public String getName(int i) {
+		
+		Player player = players.get(i);
+		return player.getName();
+	}
 }

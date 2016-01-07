@@ -69,6 +69,7 @@ public class Frame_NewPlayer extends JFrame {
 				db.addPlayer(ply);
 				Frame_Main fm = new Frame_Main();
 				fm.setVisible(true);
+				fm.updateDB(db);
 				dispose();
 			}
 		});

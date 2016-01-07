@@ -49,6 +49,18 @@ public class Frame_Main extends JFrame {
 		list.setBounds(44, 294, 1, 1);
 		contentPane.add(list);
 		
+		JButton btnPrintDb = new JButton("Print DB");
+		btnPrintDb.setBounds(12, 515, 97, 25);
+		contentPane.add(btnPrintDb);
+		btnPrintDb.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dbToConsole();
+				
+			}
+		});
+		
 		btnNewPlayer.addActionListener(new ActionListener() {
 			
 			@Override
@@ -59,6 +71,22 @@ public class Frame_Main extends JFrame {
 			}
 		});
 		
+	}
+	
+	/**
+	 * updates DB after new player added
+	 */
+	public void updateDB(Players_DB db) {
+		this.db = db;
+	}
+	
+	public void dbToConsole() {
+		
+		int i = 0;
+		while(i<db.getSize()) {
+			System.out.println(db.getName(i));
+			i++;
+		}
 	}
 }
 

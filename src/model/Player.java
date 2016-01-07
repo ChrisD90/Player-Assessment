@@ -14,12 +14,12 @@ public class Player{
 	double total;
 
 	double technik;
-	double ballan_mitnahme;
-	double passspiel;
-	double dribbling;
-	double beidfüssigkeit;
-	double kopfball;
-	double schusstechnik;
+	double technik_ballan_mitnahme;
+	double technik_passspiel;
+	double technik_dribbling;
+	double technik_beidfüssigkeit;
+	double technik_kopfball;
+	double technik_schusstechnik;
 
 	String name;
 	String prename;
@@ -48,51 +48,51 @@ public class Player{
 	}
 
 	public double getBallan_mitnahme() {
-		return ballan_mitnahme;
+		return technik_ballan_mitnahme;
 	}
 
 	public void setBallan_mitnahme(double ballan_mitnahme) {
-		this.ballan_mitnahme = ballan_mitnahme;
+		this.technik_ballan_mitnahme = ballan_mitnahme;
 	}
 
 	public double getPassspiel() {
-		return passspiel;
+		return technik_passspiel;
 	}
 
 	public void setPassspiel(double passspiel) {
-		this.passspiel = passspiel;
+		this.technik_passspiel = passspiel;
 	}
 
 	public double getDribbling() {
-		return dribbling;
+		return technik_dribbling;
 	}
 
 	public void setDribbling(double dribbling) {
-		this.dribbling = dribbling;
+		this.technik_dribbling = dribbling;
 	}
 
 	public double getBeidfüssigkeit() {
-		return beidfüssigkeit;
+		return technik_beidfüssigkeit;
 	}
 
 	public void setBeidfüssigkeit(double beidfüssigkeit) {
-		this.beidfüssigkeit = beidfüssigkeit;
+		this.technik_beidfüssigkeit = beidfüssigkeit;
 	}
 
 	public double getKopfball() {
-		return kopfball;
+		return technik_kopfball;
 	}
 
 	public void setKopfball(double kopfball) {
-		this.kopfball = kopfball;
+		this.technik_kopfball = kopfball;
 	}
 
 	public double getSchusstechnik() {
-		return schusstechnik;
+		return technik_schusstechnik;
 	}
 
 	public void setSchusstechnik(double schusstechnik) {
-		this.schusstechnik = schusstechnik;
+		this.technik_schusstechnik = schusstechnik;
 	}
 
 	public String getPrename() {
