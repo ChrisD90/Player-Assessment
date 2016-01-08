@@ -41,6 +41,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 	private JList<String> list;
 	private JButton btnLoadDb;
 	private JButton btnPrintSelectedPlayer;
+	private JButton btnDeleteDb;
 
 	/**
 	 * Create the frame.
@@ -55,16 +56,14 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		
 
 		JButton btnNewPlayer = new JButton("New Player");
 		btnNewPlayer.setBounds(660, 515, 110, 25);
 		contentPane.add(btnNewPlayer);
 
 		list = new JList<String>();
+		list.setSelectedIndex(0);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        JScrollPane listScrollPane = new JScrollPane(list);
 		list.setBounds(12, 65, 260, 434);
 		contentPane.add(list);
 
@@ -75,17 +74,19 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		btnLoadDb = new JButton("Load DB");
 		btnLoadDb.setBounds(12, 26, 97, 25);
 		contentPane.add(btnLoadDb);
-		
+
 		btnPrintSelectedPlayer = new JButton("Print selected Player");
 		btnPrintSelectedPlayer.setBounds(123, 515, 149, 25);
 		contentPane.add(btnPrintSelectedPlayer);
+
+		btnDeleteDb = new JButton("Delete DB");
+		btnDeleteDb.setBounds(178, 26, 97, 25);
+		contentPane.add(btnDeleteDb);
 		btnLoadDb.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				loadDB();
-				Dialog_DBLoaded dialog = new Dialog_DBLoaded();
-				dialog.setVisible(true);
 
 			}
 		});
@@ -104,23 +105,34 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				addPlayer();
-				
+
 			}
 		});
-		
+
 		btnPrintSelectedPlayer.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int i = 0;
-				while(i<db.size()) {
-					printPlayer(i);	
+				while (i < db.size()) {
+					printPlayer(i);
 					i++;
 				}
-				
-				
+
 			}
 		});
+
+		btnDeleteDb.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				// Dialog_Confirmation dc = new Dialog_Confirmation();
+				// dc.setVisible(true);
+
+			}
+		});
+
 		loadDB();
 
 	}
@@ -138,8 +150,9 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		int i = 0;
 		while (i < db.size()) {
 			Player p = db.get(i);
+			
 			System.out.println(p.getName() + ", " + p.getPrename() + " - "
-					+ p.getTotal());
+					+ p.getTechnik_total());
 
 			i++;
 		}
@@ -157,11 +170,12 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	/**
 	 * reads DB from File
+	 * 
 	 * @return
 	 */
 	public LinkedList<Player> readDBfromFile() {
@@ -174,7 +188,11 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			load = (LinkedList<Player>) ois.readObject();
 			ois.close();
 			fis.close();
+			Dialog_DBLoaded dialog = new Dialog_DBLoaded();
+			dialog.setVisible(true);
 		} catch (IOException ioe) {
+			// Dialog_NoFile dnf = new Dialog_NoFile();
+			// dnf.setVisible(true);
 			ioe.printStackTrace();
 
 		} catch (ClassNotFoundException c) {
@@ -185,7 +203,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 
 		return load;
 	}
-	
+
 	/**
 	 * writes the DB to a file
 	 */
@@ -200,40 +218,39 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			ioe.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * adds a player to the DB and updates the file
-	 * happens in "Frame_NewPlayer"
+	 * adds a player to the DB and updates the file happens in "Frame_NewPlayer"
 	 */
 	public void addPlayer() {
 		Frame_NewPlayer fnp = new Frame_NewPlayer(db);
 		fnp.setVisible(true);
 		dispose();
 	}
-	
+
 	/**
 	 * prints selected Player at Position i
+	 * 
 	 * @param i
 	 */
 	public void printPlayer(int i) {
-		int x = i;
+
 		Player p = db.get(i);
-		p.setDribbling(i+1);
-		System.out.println(p.getDribbling());
+		p.setTechnik_Dribbling(i + 1);
+		System.out.println(p.getTechnik_Dribbling());
 	}
-	
+
 	/**
-	 * TODO: liste Füllen
-	 * spieler über Namen ansteuern
-	 * ID einführen?! z.B.: Vorname+Nachname+Geburtsdatum ohne Punkte
+	 * TODO: liste Füllen spieler über Namen ansteuern ID einführen?! z.B.:
+	 * Vorname+Nachname+Geburtsdatum ohne Punkte
 	 */
 	public void fillList() {
-		
+
 	}
 
 	@Override
 	public void valueChanged(ListSelectionEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
