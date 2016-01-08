@@ -67,24 +67,31 @@ public class Player implements Serializable {
 
 	String name;
 	String prename;
+	String birthday;
+	String id;
 
 	// --------------------------------------------------------------
 	// Konstruktor
 	// --------------------------------------------------------------
-	public Player(String name, String prename) {
+	public Player(String name, String prename, String birthday) {
 
 		this.name = name;
 		this.prename = name;
-
+		this.birthday = birthday;
+		
+		id = name + ", " + prename + ": " +  birthday;
 	}
 
 	// --------------------------------------------------------------
 	// GETTERS AND SETTERS FOR ARRAY: TECHNICS
 	// --------------------------------------------------------------
 	public void setTechnik_total() {
+		int x = 0;
 		for (int i = 1; i < tech.length; i++) {
-			tech[0] += tech[i];
+			x += tech[i];
 		}
+		tech[0] = x/6;
+		
 		System.out.println("Technik_total: " + tech[0]);
 	}
 	
@@ -192,23 +199,23 @@ public class Player implements Serializable {
 	// --------------------------------------------------------------
 	// GETTERS FOR ARRAYS
 	// --------------------------------------------------------------
-	public double[] getTech() {
+	public double[] getTechArray() {
 		return tech;
 	}
 
-	public double[] getTak() {
+	public double[] getTakArray() {
 		return tak;
 	}
 
-	public double[] getAth() {
+	public double[] getAthArray() {
 		return ath;
 	}
 
-	public double[] getPers() {
+	public double[] getPersArray() {
 		return pers;
 	}
 	
-	public double[] getTotal() {
+	public double[] getTotalArray() {
 		return tot;
 	}
 	
@@ -231,6 +238,12 @@ public class Player implements Serializable {
 		return name;
 	}
 
+	public String getBirthday() {
+		return birthday;
+	}
 
+	public String getID() {
+		return id;
+	}
 
 }
