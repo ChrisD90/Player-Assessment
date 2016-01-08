@@ -73,23 +73,23 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		lblTechnik.setBounds(295, 30, 73, 22);
 		contentPane.add(lblTechnik);
 
-		JLabel lblBallanUndMitnahme = new JLabel("Ballan- und Mitnahme");
+		JLabel lblBallanUndMitnahme = new JLabel("1:1 offensiv");
 		lblBallanUndMitnahme.setBounds(295, 84, 123, 14);
 		contentPane.add(lblBallanUndMitnahme);
 
-		JLabel lblPassspiel = new JLabel("Passspiel");
+		JLabel lblPassspiel = new JLabel("1:1 defensiv");
 		lblPassspiel.setBounds(295, 126, 123, 14);
 		contentPane.add(lblPassspiel);
 
-		JLabel lblDribbling = new JLabel("Dribbling");
+		JLabel lblDribbling = new JLabel("Gruppentaktisch offensiv");
 		lblDribbling.setBounds(295, 168, 123, 14);
 		contentPane.add(lblDribbling);
 
-		JLabel lblBeidfigkeit = new JLabel("Beidf\u00FC\u00DFigkeit");
+		JLabel lblBeidfigkeit = new JLabel("Gruppentaktisch defensiv");
 		lblBeidfigkeit.setBounds(295, 210, 123, 14);
 		contentPane.add(lblBeidfigkeit);
 
-		JLabel lblSchusstechnik = new JLabel("Schusstechnik");
+		JLabel lblSchusstechnik = new JLabel("Umschalten offensiv");
 		lblSchusstechnik.setBounds(295, 294, 123, 14);
 		contentPane.add(lblSchusstechnik);
 
@@ -140,19 +140,19 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		contentPane.add(slider_schuss);
 
 		JLabel lblTotal = new JLabel("TOTAL:");
-		lblTotal.setBounds(295, 352, 46, 14);
+		lblTotal.setBounds(295, 493, 46, 14);
 		contentPane.add(lblTotal);
 
 		JLabel label_total = new JLabel("---");
 		label_total.setHorizontalAlignment(SwingConstants.CENTER);
-		label_total.setBounds(500, 352, 46, 14);
+		label_total.setBounds(500, 493, 46, 14);
 		contentPane.add(label_total);
 
 		JButton btnBack = new JButton("Back");
 		btnBack.setBounds(12, 526, 107, 23);
 		contentPane.add(btnBack);
 
-		JLabel lblKopfball = new JLabel("Kopfball");
+		JLabel lblKopfball = new JLabel("Freilaufen");
 		lblKopfball.setBounds(295, 252, 123, 14);
 		contentPane.add(lblKopfball);
 
@@ -200,6 +200,22 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		JLabel old_schuss = new JLabel(""+p.getTechnik_Schuss());
 		old_schuss.setBounds(428, 294, 46, 14);
 		contentPane.add(old_schuss);
+		
+		JLabel lblUmschaltenDefensiv = new JLabel("Umschalten defensiv");
+		lblUmschaltenDefensiv.setBounds(295, 342, 123, 14);
+		contentPane.add(lblUmschaltenDefensiv);
+		
+		JLabel lblZugZumTor = new JLabel("Zug zum Tor");
+		lblZugZumTor.setBounds(295, 388, 123, 14);
+		contentPane.add(lblZugZumTor);
+		
+		JLabel lblKreativitt = new JLabel("Kreativit\u00E4t");
+		lblKreativitt.setBounds(295, 432, 123, 14);
+		contentPane.add(lblKreativitt);
+		
+		JLabel lblSpielerfahrung = new JLabel("Spielerfahrung");
+		lblSpielerfahrung.setBounds(295, 457, 123, 14);
+		contentPane.add(lblSpielerfahrung);
 		
 		btnOk.addActionListener(new ActionListener() {
 
