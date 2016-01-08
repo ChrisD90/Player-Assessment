@@ -179,10 +179,9 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			public void actionPerformed(ActionEvent e) {
 				int x = comboBox.getSelectedIndex();
 				lbltech.setText("" + db.get(x).getTechnik_total());
-				// lbltac.setText("" + db.get(x).get);
-				// lblat.setText("" + db.get(x).getTechnik_total());
-				// lblper.setText("" + db.get(x).getTechnik_total());
-				System.out.println(x);
+				lbltac.setText("" + db.get(x).getTaktik_total());
+				lblat.setText("" + db.get(x).getAthletik_total());
+				lblper.setText("" + db.get(x).getPersönlichkeit_total());
 
 			}
 		});
@@ -230,7 +229,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		while (i < db.size()) {
 			Player p = db.get(i);
 
-			System.out.println(p.getID() + " - " + p.getTechnik_total());
+			System.out.println(p.getID());
 
 			i++;
 		}

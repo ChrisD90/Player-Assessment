@@ -64,7 +64,6 @@ public class Player implements Serializable {
 	// 6 --> wille
 	// 7 --> eltern
 
-
 	String name;
 	String prename;
 	String birthday;
@@ -78,23 +77,23 @@ public class Player implements Serializable {
 		this.name = name;
 		this.prename = name;
 		this.birthday = birthday;
-		
-		id = name + ", " + prename + ": " +  birthday;
+
+		id = name + ", " + prename + ": " + birthday;
 	}
 
 	// --------------------------------------------------------------
 	// GETTERS AND SETTERS FOR ARRAY: TECHNICS
 	// --------------------------------------------------------------
 	public void setTechnik_total() {
-		int x = 0;
+		double x = 0;
 		for (int i = 1; i < tech.length; i++) {
 			x += tech[i];
 		}
-		tech[0] = x/6;
-		
+		tech[0] = x / 6;
+
 		System.out.println("Technik_total: " + tech[0]);
 	}
-	
+
 	public void setTechnik_Ballan(double x) {
 		tech[1] = x;
 	}
@@ -120,11 +119,11 @@ public class Player implements Serializable {
 	}
 
 	// --------------------------------------------------------------
-	
+
 	public double getTechnik_total() {
 		return tech[0];
 	}
-	
+
 	public double getTechnik_Ballan() {
 		return tech[1];
 	}
@@ -134,7 +133,7 @@ public class Player implements Serializable {
 	}
 
 	public double getTechnik_Dribbling() {
-		return tech[3] ;
+		return tech[3];
 	}
 
 	public double getTechnik_Beidf() {
@@ -142,27 +141,253 @@ public class Player implements Serializable {
 	}
 
 	public double getTechnik_Kopfball() {
-		return tech[5] ;
+		return tech[5];
 	}
 
 	public double getTechnik_Schuss() {
-		return tech[6] ;
+		return tech[6];
 	}
-
-
 
 	// --------------------------------------------------------------
 	// GETTERS AND SETTERS FOR ARRAY: TACTICS
 	// --------------------------------------------------------------
+	public void setTaktik_total() {
+		double x = 0;
+		for (int i = 1; i < tak.length; i++) {
+			x += tak[i];
+		}
+		tak[0] = x / 10;
+
+		System.out.println("Technik_total: " + tak[0]);
+	}
+	
+
+	public void setTaktik_1off(double x) {
+		tak[1] = x;
+	}
+
+	public void setTaktik_1def(double x) {
+		tak[2] = x;
+	}
+
+	public void setTaktik_gruppeOff(double x) {
+		tak[3] = x;
+	}
+
+	public void setTaktik_gruppeDef(double x) {
+		tak[4] = x;
+	}
+
+	public void setTaktik_freilaufen(double x) {
+		tak[5] = x;
+	}
+
+	public void setTaktik_umschaltOff(double x) {
+		tak[6] = x;
+	}
+
+	public void setTaktik_umschaltDef(double x) {
+		tak[7] = x;
+	}
+
+	public void setTaktik_zugZumTor(double x) {
+		tak[8] = x;
+	}
+
+	public void setTaktik_kreativität(double x) {
+		tak[9] = x;
+	}
+
+	public void setTaktik_spielerfahrung(double x) {
+		tak[10] = x;
+	}
+
+	// --------------------------------------------------------------
+	
+	public double getTaktik_total() {
+		return tak[0];
+	}
+
+	public double getTaktik_1off() {
+		return tak[1];
+	}
+
+	public double getTaktik_1def() {
+		return tak[2];
+	}
+
+	public double getTaktik_gruppeOff() {
+		return tak[3];
+	}
+
+	public double getTaktik_gruppeDef() {
+		return tak[4];
+	}
+
+	public double getTaktik_freilaufen() {
+		return tak[5];
+	}
+
+	public double getTaktik_umschaltOff() {
+		return tak[6];
+	}
+
+	public double getTaktik_umschaltDef() {
+		return tak[7];
+	}
+
+	public double getTaktik_zugZumTor() {
+		return tak[8];
+	}
+
+	public double getTaktik_kreativität() {
+		return tak[9];
+	}
+
+	public double getTaktik_spielerfahrung() {
+		return tak[10];
+	}
 
 	// --------------------------------------------------------------
 	// GETTERS AND SETTERS FOR ARRAY: ATHELTICS
 	// --------------------------------------------------------------
 
+	public void setAthletik_total() {
+		double x = 0;
+		for (int i = 1; i < ath.length; i++) {
+			x += ath[i];
+		}
+		ath[0] = x / 6;
+
+		System.out.println("Athletik_total: " + ath[0]);
+	}
+	
+	public void setAthletik_bewegungsschnelligkeit(double x) {
+		ath[1] = x;
+	}
+	
+	public void setAthletik_aktionsschnelligkeit(double x) {
+		ath[2] = x;
+	}
+	
+	public void setAthletik_aktionsschnelligkeitZeit(double x) {
+		ath[3] = x;
+	}
+	
+	public void setAthletik_kraft(double x) {
+		ath[4] = x;
+	}
+	
+	public void setAthletik_koordination(double x) {
+		ath[5] = x;
+	}
+	
+	public void setAthletik_biologAlter(double x) {
+		ath[6] = x;
+	}
+	
+	
+	public double getAthletik_total() {
+		return ath[0];
+	}
+	
+	public double getAthletik_bewegungsschnelligkeit(double x) {
+		return ath[1];
+	}
+	
+	public double getAthletik_aktionsschnelligkeit(double x) {
+		return ath[2];
+	}
+	
+	public double getAthletik_aktionsschnelligkeitZeit(double x) {
+		return ath[3];
+	}
+	
+	public double getAthletik_kraft(double x) {
+		return ath[4];
+	}
+	
+	public double getAthletik_koordination(double x) {
+		return ath[5];
+	}
+	
+	public double getAthletik_biologAlter(double x) {
+		return ath[6];
+	}
 	// --------------------------------------------------------------
 	// GETTERS AND SETTERS FOR ARRAY: PERSONALITY
 	// --------------------------------------------------------------
+	public void setPersönlichkeit_total() {
+		double x = 0;
+		for (int i = 1; i < pers.length; i++) {
+			x += pers[i];
+		}
+		pers[0] = x / 7;
 
+		System.out.println("Persönlichkeit_total: " + pers[0]);
+	}
+	
+	public void setPersönlichkeit_anweisungenVerstehen(double x) {
+		pers[1] = x;
+	}
+	
+	public void setPersönlichkeit_anweisungenUmsetzen(double x) {
+		pers[2] = x;
+	}
+	
+	public void setPersönlichkeit_einordnen(double x) {
+		pers[3] = x;
+	}
+	
+	public void setPersönlichkeit_kommunikation(double x) {
+		pers[4] = x;
+	}
+	
+	public void setPersönlichkeit_selbstbewusstsein(double x) {
+		pers[5] = x;
+	}
+	
+	public void setPersönlichkeit_wille(double x) {
+		pers[6] = x;
+	}
+	
+	public void setPersönlichkeit_eltern(double x) {
+		pers[7] = x;
+	}
+	
+	public double getPersönlichkeit_total() {
+		return pers[0];
+	}
+	
+	public double getPersönlichkeit_anweisungenVerstehen() {
+		return pers[1];
+	}
+	
+	public double getPersönlichkeit_anweisungenUmsetzen() {
+		return pers[2] ;
+	}
+	
+	public double getPersönlichkeit_einordnen() {
+		return pers[3] ;
+	}
+	
+	public double getPersönlichkeit_kommunikation() {
+		return pers[4] ;
+	}
+	
+	public double getPersönlichkeit_selbstbewusstsein() {
+		return pers[5] ;
+	}
+	
+	public double getPersönlichkeit_wille() {
+		return pers[6] ;
+	}
+	
+	public double getPersönlichkeit_eltern() {
+		return pers[7];
+	}
+	
+	
 	// --------------------------------------------------------------
 	// GETTERS AND SETTERS FOR ARRAY: TOTAL
 	// --------------------------------------------------------------
@@ -170,32 +395,32 @@ public class Player implements Serializable {
 		setTechnik_total();
 		tot[1] = tech[0];
 	}
-	
+
 	public void setTotal_Tak() {
-		//setTaktik_total();
+		// setTaktik_total();
 		tot[2] = tak[0];
 	}
-	
+
 	public void setTotal_Ath() {
-		//setAth_total();
+		// setAth_total();
 		tot[3] = ath[0];
 	}
-	
+
 	public void setTotal_Pers() {
-		//setPers_Total();
+		// setPers_Total();
 		tot[4] = pers[0];
 	}
-	
+
 	public void setTotal_Player() {
-		for(int i =1; i <= tot.length; i++) {
+		for (int i = 1; i <= tot.length; i++) {
 			tot[0] += tot[i];
 		}
 	}
-	
+
 	public double getTotal_Player() {
 		return tot[0];
 	}
-	
+
 	// --------------------------------------------------------------
 	// GETTERS FOR ARRAYS
 	// --------------------------------------------------------------
@@ -214,11 +439,11 @@ public class Player implements Serializable {
 	public double[] getPersArray() {
 		return pers;
 	}
-	
+
 	public double[] getTotalArray() {
 		return tot;
 	}
-	
+
 	// --------------------------------------------------------------
 	// NAME
 	// --------------------------------------------------------------

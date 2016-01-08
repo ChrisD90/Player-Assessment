@@ -14,13 +14,15 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import model.Player;
+
 import java.awt.Font;
+
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
-public class Frame_EditPlayer_Technik extends JFrame {
+public class Frame_EditPlayer_Athletik extends JFrame {
 
 	private JPanel contentPane;
 
@@ -33,13 +35,13 @@ public class Frame_EditPlayer_Technik extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Frame_EditPlayer_Technik(LinkedList<Player> db, Player p) {
+	public Frame_EditPlayer_Athletik(LinkedList<Player> db, Player p) {
 		
 		this.p = p;
 		
 		setResizable(false);
 		setTitle("Edit Player");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Frame_EditPlayer_Technik.class.getResource("/ressources/Logo1.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Frame_EditPlayer_Athletik.class.getResource("/ressources/Logo1.png")));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -69,28 +71,28 @@ public class Frame_EditPlayer_Technik extends JFrame {
 		lblPerson.setBounds(10, 30, 73, 22);
 		contentPane.add(lblPerson);
 
-		JLabel lblTechnik = new JLabel("Technik");
-		lblTechnik.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblTechnik.setBounds(295, 30, 73, 22);
-		contentPane.add(lblTechnik);
+		JLabel lblAthletik = new JLabel("Athletik");
+		lblAthletik.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblAthletik.setBounds(295, 30, 73, 22);
+		contentPane.add(lblAthletik);
 
-		JLabel lblBallanUndMitnahme = new JLabel("Ballan- und Mitnahme");
+		JLabel lblBallanUndMitnahme = new JLabel("Bewegungsschnelligkeit");
 		lblBallanUndMitnahme.setBounds(295, 84, 123, 14);
 		contentPane.add(lblBallanUndMitnahme);
 
-		JLabel lblPassspiel = new JLabel("Passspiel");
+		JLabel lblPassspiel = new JLabel("Aktionsschnelligkeit");
 		lblPassspiel.setBounds(295, 126, 123, 14);
 		contentPane.add(lblPassspiel);
 
-		JLabel lblDribbling = new JLabel("Dribbling");
+		JLabel lblDribbling = new JLabel("Aktionss. \u00FCber Spielzeit");
 		lblDribbling.setBounds(295, 168, 123, 14);
 		contentPane.add(lblDribbling);
 
-		JLabel lblBeidfigkeit = new JLabel("Beidf\u00FC\u00DFigkeit");
+		JLabel lblBeidfigkeit = new JLabel("Kraft");
 		lblBeidfigkeit.setBounds(295, 210, 123, 14);
 		contentPane.add(lblBeidfigkeit);
 
-		JLabel lblSchusstechnik = new JLabel("Schusstechnik");
+		JLabel lblSchusstechnik = new JLabel("biolog. Alter");
 		lblSchusstechnik.setBounds(295, 294, 123, 14);
 		contentPane.add(lblSchusstechnik);
 
@@ -101,7 +103,6 @@ public class Frame_EditPlayer_Technik extends JFrame {
 		contentPane.add(ballanna_mitnahme);
 
 		JSlider slider_ball = new JSlider();
-		slider_ball.setPaintLabels(true);
 		slider_ball.setBounds(580, 76, 200, 26);
 		contentPane.add(slider_ball);
 
@@ -155,7 +156,7 @@ public class Frame_EditPlayer_Technik extends JFrame {
 		btnBack.setBounds(12, 537, 107, 23);
 		contentPane.add(btnBack);
 
-		JLabel lblKopfball = new JLabel("Kopfball");
+		JLabel lblKopfball = new JLabel("Koordination");
 		lblKopfball.setBounds(295, 252, 123, 14);
 		contentPane.add(lblKopfball);
 
@@ -180,29 +181,41 @@ public class Frame_EditPlayer_Technik extends JFrame {
 		label_vorname.setBounds(103, 84, 128, 14);
 		contentPane.add(label_vorname);
 		
-		JLabel old_ball = new JLabel(""+p.getTechnik_Ballan());
+		JLabel old_ball = new JLabel("");
 		old_ball.setBounds(428, 84, 46, 14);
 		contentPane.add(old_ball);
 		
-		JLabel old_pass = new JLabel(""+p.getTechnik_Pass());
+		JLabel old_pass = new JLabel("");
 		old_pass.setBounds(428, 126, 46, 14);
 		contentPane.add(old_pass);
 		
-		JLabel old_dribbling = new JLabel(""+p.getTechnik_Dribbling());
+		JLabel old_dribbling = new JLabel("");
 		old_dribbling.setBounds(428, 167, 46, 14);
 		contentPane.add(old_dribbling);
 		
-		JLabel old_beid = new JLabel(""+p.getTechnik_Beidf());
+		JLabel old_beid = new JLabel("");
 		old_beid.setBounds(428, 210, 46, 14);
 		contentPane.add(old_beid);
 		
-		JLabel old_kopf = new JLabel(""+p.getTechnik_Kopfball());
+		JLabel old_kopf = new JLabel("");
 		old_kopf.setBounds(428, 252, 46, 14);
 		contentPane.add(old_kopf);
 		
-		JLabel old_schuss = new JLabel(""+p.getTechnik_Schuss());
+		JLabel old_schuss = new JLabel("");
 		old_schuss.setBounds(428, 294, 46, 14);
 		contentPane.add(old_schuss);
+		
+		JButton btnTechnik = new JButton("Technik");
+		btnTechnik.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frame_EditPlayer_Technik frame = new Frame_EditPlayer_Technik(db, p);
+				frame.setVisible(true);
+				dispose();
+			}
+		});
+		
+		btnTechnik.setBounds(12, 385, 105, 23);
+		contentPane.add(btnTechnik);
 		
 		JButton btnTaktik = new JButton("Taktik");
 		btnTaktik.addActionListener(new ActionListener() {
@@ -212,20 +225,8 @@ public class Frame_EditPlayer_Technik extends JFrame {
 				dispose();
 			}
 		});
-		
-		btnTaktik.setBounds(12, 423, 105, 23);
+		btnTaktik.setBounds(12, 420, 105, 23);
 		contentPane.add(btnTaktik);
-		
-		JButton btnAthletik = new JButton("Athletik");
-		btnAthletik.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Frame_EditPlayer_Athletik frame = new Frame_EditPlayer_Athletik(db, p);
-				frame.setVisible(true);
-				dispose();
-			}
-		});
-		btnAthletik.setBounds(12, 458, 105, 23);
-		contentPane.add(btnAthletik);
 		
 		JButton btnPersnlichkeit = new JButton("Pers\u00F6nlichkeit");
 		btnPersnlichkeit.addActionListener(new ActionListener() {
@@ -235,28 +236,28 @@ public class Frame_EditPlayer_Technik extends JFrame {
 				dispose();
 			}
 		});
-		btnPersnlichkeit.setBounds(12, 493, 105, 23);
+		btnPersnlichkeit.setBounds(12, 490, 105, 23);
 		contentPane.add(btnPersnlichkeit);
 		
-		JButton btnTechnik = new JButton("Technik");
-		btnTechnik.setEnabled(false);
-		btnTechnik.setBounds(12, 388, 105, 23);
-		contentPane.add(btnTechnik);
+		JButton btnAthletik = new JButton("Athletik");
+		btnAthletik.setEnabled(false);
+		btnAthletik.setBounds(12, 455, 107, 23);
+		contentPane.add(btnAthletik);
 		
 		btnOk.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				p.setTechnik_Ballan(((double) ballanna_mitnahme.getValue() * slider_ball.getValue())/100);
-				p.setTechnik_Pass(((double) passspiel.getValue() * slider_pass.getValue())/100);
-				p.setTechnik_Dribbling(((double) dribbling.getValue() * slider_dribbling.getValue())/100);
-				p.setTechnik_Beidf(((double) beidfuss.getValue() * slider_beidfuss.getValue())/100);
-				p.setTechnik_Kopfball(((double) kopfball.getValue() * slider_kopfball.getValue())/100);
-				p.setTechnik_Schuss(((double) schuss.getValue() * slider_schuss.getValue())/100);
-				p.setTechnik_total();
+				p.setAthletik_bewegungsschnelligkeit(((double) ballanna_mitnahme.getValue() * slider_ball.getValue())/100);
+				p.setAthletik_aktionsschnelligkeit(((double) passspiel.getValue() * slider_pass.getValue())/100);
+				p.setAthletik_aktionsschnelligkeitZeit(((double) dribbling.getValue() * slider_dribbling.getValue())/100);
+				p.setAthletik_kraft(((double) beidfuss.getValue() * slider_beidfuss.getValue())/100);
+				p.setAthletik_koordination(((double) kopfball.getValue() * slider_kopfball.getValue())/100);
+				p.setAthletik_biologAlter(((double) schuss.getValue() * slider_schuss.getValue())/100);
+				p.setAthletik_total();
 								
-				label_total.setText(""+p.getTechnik_total());
+				label_total.setText(""+p.getAthletik_total());
 				
 				
 			}
