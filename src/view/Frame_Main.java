@@ -198,6 +198,9 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 				if (file.exists()) {
 					file.delete();
 					System.out.println("File deleted");
+					Frame_Main frame = new Frame_Main();
+					frame.setVisible(true);
+					dispose();
 				} else {
 					//TODO WINDOW
 					System.out.println("NO DATABSE!");
@@ -210,7 +213,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			}
 		});
 
-		// loadDB();
+		loadDB();
 
 	}
 
