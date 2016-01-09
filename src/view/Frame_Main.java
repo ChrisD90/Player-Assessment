@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -191,24 +192,33 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				File file = new File("playersDB");
-
-				// Zuvor alle mit dem File assoziierten Streams schließen...
-
-				if (file.exists()) {
-					file.delete();
-					System.out.println("File deleted");
-					Frame_Main frame = new Frame_Main();
-					frame.setVisible(true);
-					dispose();
-				} else {
-					//TODO WINDOW
-					System.out.println("NO DATABSE!");
+				int res = JOptionPane.showConfirmDialog(null,
+						"Alle Spieler wirklich löschen?", "",
+						JOptionPane.YES_NO_OPTION);
+				switch (res) {
+				case JOptionPane.YES_OPTION:
+					try {
+						File file = new File("playersDB");
+						if (file.exists()) {
+							file.delete();
+							System.out.println("File deleted");
+							Frame_Main frame = new Frame_Main();
+							frame.setVisible(true);
+							dispose();
+						} else {
+							// TODO WINDOW
+							System.out.println("NO DATABSE!");
+						}
+					} catch (Exception ex) {
+						ex.printStackTrace();
+					}
+					JOptionPane.showMessageDialog(null, "Datenbank gelöscht!");
+					break;
+				case JOptionPane.NO_OPTION:
+					System.out.println("Löschen abgebrochen!");
+					JOptionPane.showMessageDialog(null, "Löschen abgebrochen!");
+					break;
 				}
-
-				
-				// Dialog_Confirmation dc = new Dialog_Confirmation();
-				// dc.setVisible(true);
 
 			}
 		});
