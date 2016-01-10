@@ -28,7 +28,15 @@ import javax.swing.SwingConstants;
 
 import java.awt.Font;
 
+import javax.swing.ImageIcon;
+import javax.swing.JSeparator;
+
 public class Frame_Main extends JFrame implements ListSelectionListener {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
 
@@ -37,12 +45,10 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 	 */
 	LinkedList<Player> db = new LinkedList<Player>();
 	private JButton btnLoadDb;
-	private JButton btnPrintSelectedPlayer;
+	private JButton buttonSpieler1anzeigen;
 	private JButton btnDeleteDb;
 	private JButton btnNewPlayer;
 	JComboBox<String> comboBox;
-	private JLabel lblTechnik;
-	private JLabel lbl_technik;
 	private JLabel lblTechnik_1;
 	private JLabel lbltech;
 	private JLabel lblTaktik;
@@ -51,6 +57,10 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 	private JLabel lbltac;
 	private JLabel lblat;
 	private JLabel lblper;
+
+	private JLabel labeltot1;
+
+	private JComboBox<String> comboBox_1;
 
 	/**
 	 * Create the frame.
@@ -67,77 +77,176 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton btnEditPlayer = new JButton("Edit Player");
-		btnEditPlayer.setBounds(660, 515, 110, 25);
+		JButton btnEditPlayer = new JButton("Bearbeiten");
+		btnEditPlayer.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnEditPlayer.setBounds(177, 222, 97, 25);
 		contentPane.add(btnEditPlayer);
 
 		JButton btnPrintDb = new JButton("Print DB");
-		btnPrintDb.setBounds(12, 515, 97, 25);
+		btnPrintDb.setBounds(677, 11, 97, 25);
 		contentPane.add(btnPrintDb);
 
 		btnLoadDb = new JButton("Load DB");
-		btnLoadDb.setBounds(12, 26, 97, 25);
+		btnLoadDb.setBounds(12, 11, 97, 25);
 		contentPane.add(btnLoadDb);
 
-		btnPrintSelectedPlayer = new JButton("Show Player");
-		btnPrintSelectedPlayer.setBounds(123, 515, 149, 25);
-		contentPane.add(btnPrintSelectedPlayer);
+		buttonSpieler1anzeigen = new JButton("Spieler anzeigen");
+		buttonSpieler1anzeigen.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		buttonSpieler1anzeigen.setBounds(10, 223, 110, 25);
+		contentPane.add(buttonSpieler1anzeigen);
 
 		btnDeleteDb = new JButton("Delete DB");
-		btnDeleteDb.setBounds(178, 26, 97, 25);
+		btnDeleteDb.setBounds(177, 11, 97, 25);
 		contentPane.add(btnDeleteDb);
 
-		btnNewPlayer = new JButton("New Player");
-		btnNewPlayer.setBounds(660, 481, 110, 23);
+		btnNewPlayer = new JButton("Neuer Spieler");
+		btnNewPlayer.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnNewPlayer.setBounds(177, 188, 97, 23);
 		contentPane.add(btnNewPlayer);
 
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(12, 73, 260, 25);
+		comboBox.setBounds(12, 95, 260, 25);
 		contentPane.add(comboBox);
 
 		lblTechnik_1 = new JLabel("Technik");
 		lblTechnik_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblTechnik_1.setBounds(391, 71, 97, 32);
+		lblTechnik_1.setBounds(345, 87, 97, 32);
 		contentPane.add(lblTechnik_1);
 
 		lbltech = new JLabel("-");
 		lbltech.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		lbltech.setHorizontalAlignment(SwingConstants.CENTER);
-		lbltech.setBounds(524, 69, 97, 32);
+		lbltech.setBounds(478, 85, 97, 32);
 		contentPane.add(lbltech);
 
 		lblTaktik = new JLabel("Taktik");
 		lblTaktik.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblTaktik.setBounds(391, 151, 97, 32);
+		lblTaktik.setBounds(345, 129, 97, 32);
 		contentPane.add(lblTaktik);
 
 		lblAthletik = new JLabel("Athletik");
 		lblAthletik.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblAthletik.setBounds(391, 231, 97, 32);
+		lblAthletik.setBounds(345, 172, 97, 32);
 		contentPane.add(lblAthletik);
 
 		lblPersnlichkeit = new JLabel("Pers\u00F6nlichkeit");
 		lblPersnlichkeit.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblPersnlichkeit.setBounds(391, 311, 161, 32);
+		lblPersnlichkeit.setBounds(345, 215, 161, 32);
 		contentPane.add(lblPersnlichkeit);
 
 		lbltac = new JLabel("-");
 		lbltac.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltac.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-		lbltac.setBounds(524, 151, 97, 32);
+		lbltac.setBounds(478, 129, 97, 32);
 		contentPane.add(lbltac);
 
 		lblat = new JLabel("-");
 		lblat.setHorizontalAlignment(SwingConstants.CENTER);
 		lblat.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-		lblat.setBounds(524, 231, 97, 32);
+		lblat.setBounds(478, 172, 97, 32);
 		contentPane.add(lblat);
 
 		lblper = new JLabel("-");
 		lblper.setHorizontalAlignment(SwingConstants.CENTER);
 		lblper.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-		lblper.setBounds(524, 311, 97, 32);
+		lblper.setBounds(478, 215, 97, 32);
 		contentPane.add(lblper);
+		
+		comboBox_1 = new JComboBox<String>();
+		comboBox_1.setBounds(12, 360, 260, 20);
+		contentPane.add(comboBox_1);
+		
+		JLabel lblSpielerWhlen = new JLabel("Spieler w\u00E4hlen:");
+		lblSpielerWhlen.setBounds(12, 70, 260, 14);
+		contentPane.add(lblSpielerWhlen);
+		
+		JLabel lblSpielerFrVergleich = new JLabel("Spieler f\u00FCr Vergleich w\u00E4hlen:");
+		lblSpielerFrVergleich.setBounds(10, 335, 260, 14);
+		contentPane.add(lblSpielerFrVergleich);
+		
+		JLabel labelTechnik2 = new JLabel("Technik");
+		labelTechnik2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		labelTechnik2.setBounds(345, 362, 97, 32);
+		contentPane.add(labelTechnik2);
+		
+		JLabel label_1 = new JLabel("-");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		label_1.setBounds(478, 360, 97, 32);
+		contentPane.add(label_1);
+		
+		JLabel labelTaktik2 = new JLabel("Taktik");
+		labelTaktik2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		labelTaktik2.setBounds(345, 404, 97, 32);
+		contentPane.add(labelTaktik2);
+		
+		JLabel label_3 = new JLabel("-");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		label_3.setBounds(478, 404, 97, 32);
+		contentPane.add(label_3);
+		
+		JLabel labelAthletik2 = new JLabel("Athletik");
+		labelAthletik2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		labelAthletik2.setBounds(345, 447, 97, 32);
+		contentPane.add(labelAthletik2);
+		
+		JLabel label_5 = new JLabel("-");
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		label_5.setBounds(478, 447, 97, 32);
+		contentPane.add(label_5);
+		
+		JLabel labelPers2 = new JLabel("Pers\u00F6nlichkeit");
+		labelPers2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		labelPers2.setBounds(345, 490, 161, 32);
+		contentPane.add(labelPers2);
+		
+		JLabel label_7 = new JLabel("-");
+		label_7.setHorizontalAlignment(SwingConstants.CENTER);
+		label_7.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		label_7.setBounds(478, 490, 97, 32);
+		contentPane.add(label_7);
+		
+		JButton buttonSpieler2anzeigen = new JButton("Spieler anzeigen");
+		
+		buttonSpieler2anzeigen.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		buttonSpieler2anzeigen.setBounds(10, 497, 149, 25);
+		contentPane.add(buttonSpieler2anzeigen);
+		
+		JLabel lblTotal1 = new JLabel("TOTAL:");
+		lblTotal1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblTotal1.setBounds(610, 215, 76, 32);
+		contentPane.add(lblTotal1);
+		
+		JLabel labelTotal2 = new JLabel("TOTAL:");
+		labelTotal2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		labelTotal2.setBounds(610, 490, 76, 32);
+		contentPane.add(labelTotal2);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(0, 45, 782, 5);
+		contentPane.add(separator);
+		
+		JLabel lblSpieler1 = new JLabel("Spieler");
+		lblSpieler1.setBounds(344, 70, 430, 14);
+		contentPane.add(lblSpieler1);
+		
+		JLabel labelSpieler2 = new JLabel("Spieler");
+		labelSpieler2.setBounds(345, 335, 430, 14);
+		contentPane.add(labelSpieler2);
+		
+		labeltot1 = new JLabel("-");
+		labeltot1.setHorizontalAlignment(SwingConstants.CENTER);
+		labeltot1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		labeltot1.setBounds(687, 215, 97, 32);
+		contentPane.add(labeltot1);
+		
+		JLabel label = new JLabel("-");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		label.setBounds(677, 490, 97, 32);
+		contentPane.add(label);
 
 		btnNewPlayer.addActionListener(new ActionListener() {
 
@@ -175,7 +284,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			}
 		});
 
-		btnPrintSelectedPlayer.addActionListener(new ActionListener() {
+		buttonSpieler1anzeigen.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -184,6 +293,9 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 				lbltac.setText("" + db.get(x).getTaktik_total());
 				lblat.setText("" + db.get(x).getAthletik_total());
 				lblper.setText("" + db.get(x).getPersönlichkeit_total());
+				db.get(x).setTotal();
+				labeltot1.setText(""+db.get(x).getTotal_Player());
+				lblSpieler1.setText(db.get(x).getID());
 
 			}
 		});
@@ -207,7 +319,6 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 							frame.setVisible(true);
 							dispose();
 						} else {
-							// TODO WINDOW
 							System.out.println("NO DATABSE!");
 						}
 					} catch (Exception ex) {
@@ -221,6 +332,19 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 					break;
 				}
 
+			}
+		});
+		
+		buttonSpieler2anzeigen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int x = comboBox_1.getSelectedIndex();
+				label_1.setText("" + db.get(x).getTechnik_total());
+				label_3.setText("" + db.get(x).getTaktik_total());
+				label_5.setText("" + db.get(x).getAthletik_total());
+				label_7.setText("" + db.get(x).getPersönlichkeit_total());
+				db.get(x).setTotal();
+				label.setText(""+db.get(x).getTotal_Player());
+				labelSpieler2.setText(db.get(x).getID());
 			}
 		});
 
@@ -267,16 +391,17 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 			}
 
 			comboBox.removeAllItems();
+			comboBox_1.removeAllItems();
+			
 			for (int i = 0; i < db.size(); i++) {
 				Player p = db.get(i);
 				comboBox.addItem(p.getID());
+				comboBox_1.addItem(p.getID());
 			}
-
-			Dialog_DBLoaded dialog = new Dialog_DBLoaded();
-			dialog.setVisible(true);
+			//JOptionPane.showMessageDialog(null, "Datenbank geladen!");
+			
 		} else {
-
-			// TODO WINDOW
+			JOptionPane.showMessageDialog(null, "Keine Datenbank vorhanden!");
 			System.out.println("NO DATABSE!");
 		}
 	}
@@ -286,6 +411,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public LinkedList<Player> readDBfromFile() {
 
 		LinkedList<Player> load = new LinkedList<Player>();
@@ -355,5 +481,4 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		// Auto-generated method stub
 
 	}
-
 }

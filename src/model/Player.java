@@ -391,30 +391,18 @@ public class Player implements Serializable {
 	// --------------------------------------------------------------
 	// GETTERS AND SETTERS FOR ARRAY: TOTAL
 	// --------------------------------------------------------------
-	public void setTotal_Techs() {
-		setTechnik_total();
+	public void setTotal() {
+		
 		tot[1] = tech[0];
-	}
-
-	public void setTotal_Tak() {
-		// setTaktik_total();
 		tot[2] = tak[0];
-	}
-
-	public void setTotal_Ath() {
-		// setAth_total();
 		tot[3] = ath[0];
-	}
-
-	public void setTotal_Pers() {
-		// setPers_Total();
 		tot[4] = pers[0];
-	}
-
-	public void setTotal_Player() {
-		for (int i = 1; i <= tot.length; i++) {
-			tot[0] += tot[i];
+		
+		double x = 0;
+		for (int i = 1; i < tot.length; i++) {
+			x += tot[i];
 		}
+		tot[0] = x / 4;
 	}
 
 	public double getTotal_Player() {
