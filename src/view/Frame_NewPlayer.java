@@ -15,13 +15,14 @@ import javax.swing.JButton;
 
 import model.Player;
 import java.awt.Font;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.JSlider;
-import javax.swing.SwingConstants;
+
 
 public class Frame_NewPlayer extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;

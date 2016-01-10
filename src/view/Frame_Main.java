@@ -28,7 +28,6 @@ import javax.swing.SwingConstants;
 
 import java.awt.Font;
 
-import javax.swing.ImageIcon;
 import javax.swing.JSeparator;
 
 public class Frame_Main extends JFrame implements ListSelectionListener {
@@ -70,7 +69,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				Frame_Main.class.getResource("/ressources/Logo1.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -151,97 +150,99 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 		lblper.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		lblper.setBounds(478, 215, 97, 32);
 		contentPane.add(lblper);
-		
+
 		comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(12, 360, 260, 20);
 		contentPane.add(comboBox_1);
-		
+
 		JLabel lblSpielerWhlen = new JLabel("Spieler w\u00E4hlen:");
 		lblSpielerWhlen.setBounds(12, 70, 260, 14);
 		contentPane.add(lblSpielerWhlen);
-		
-		JLabel lblSpielerFrVergleich = new JLabel("Spieler f\u00FCr Vergleich w\u00E4hlen:");
+
+		JLabel lblSpielerFrVergleich = new JLabel(
+				"Spieler f\u00FCr Vergleich w\u00E4hlen:");
 		lblSpielerFrVergleich.setBounds(10, 335, 260, 14);
 		contentPane.add(lblSpielerFrVergleich);
-		
+
 		JLabel labelTechnik2 = new JLabel("Technik");
 		labelTechnik2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		labelTechnik2.setBounds(345, 362, 97, 32);
 		contentPane.add(labelTechnik2);
-		
+
 		JLabel label_1 = new JLabel("-");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		label_1.setBounds(478, 360, 97, 32);
 		contentPane.add(label_1);
-		
+
 		JLabel labelTaktik2 = new JLabel("Taktik");
 		labelTaktik2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		labelTaktik2.setBounds(345, 404, 97, 32);
 		contentPane.add(labelTaktik2);
-		
+
 		JLabel label_3 = new JLabel("-");
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		label_3.setBounds(478, 404, 97, 32);
 		contentPane.add(label_3);
-		
+
 		JLabel labelAthletik2 = new JLabel("Athletik");
 		labelAthletik2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		labelAthletik2.setBounds(345, 447, 97, 32);
 		contentPane.add(labelAthletik2);
-		
+
 		JLabel label_5 = new JLabel("-");
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		label_5.setBounds(478, 447, 97, 32);
 		contentPane.add(label_5);
-		
+
 		JLabel labelPers2 = new JLabel("Pers\u00F6nlichkeit");
 		labelPers2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		labelPers2.setBounds(345, 490, 161, 32);
 		contentPane.add(labelPers2);
-		
+
 		JLabel label_7 = new JLabel("-");
 		label_7.setHorizontalAlignment(SwingConstants.CENTER);
 		label_7.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		label_7.setBounds(478, 490, 97, 32);
 		contentPane.add(label_7);
-		
+
 		JButton buttonSpieler2anzeigen = new JButton("Spieler anzeigen");
-		
+
 		buttonSpieler2anzeigen.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		buttonSpieler2anzeigen.setBounds(10, 497, 149, 25);
 		contentPane.add(buttonSpieler2anzeigen);
-		
+
 		JLabel lblTotal1 = new JLabel("TOTAL:");
 		lblTotal1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblTotal1.setBounds(610, 215, 76, 32);
 		contentPane.add(lblTotal1);
-		
+
 		JLabel labelTotal2 = new JLabel("TOTAL:");
 		labelTotal2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		labelTotal2.setBounds(610, 490, 76, 32);
 		contentPane.add(labelTotal2);
-		
+
 		JSeparator separator = new JSeparator();
 		separator.setBounds(0, 45, 782, 5);
 		contentPane.add(separator);
-		
+
 		JLabel lblSpieler1 = new JLabel("Spieler");
 		lblSpieler1.setBounds(344, 70, 430, 14);
 		contentPane.add(lblSpieler1);
-		
+
 		JLabel labelSpieler2 = new JLabel("Spieler");
 		labelSpieler2.setBounds(345, 335, 430, 14);
 		contentPane.add(labelSpieler2);
-		
+
 		labeltot1 = new JLabel("-");
 		labeltot1.setHorizontalAlignment(SwingConstants.CENTER);
-		labeltot1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		labeltot1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC,
+				20));
 		labeltot1.setBounds(687, 215, 97, 32);
 		contentPane.add(labeltot1);
-		
+
 		JLabel label = new JLabel("-");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
@@ -294,7 +295,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 				lblat.setText("" + db.get(x).getAthletik_total());
 				lblper.setText("" + db.get(x).getPersönlichkeit_total());
 				db.get(x).setTotal();
-				labeltot1.setText(""+db.get(x).getTotal_Player());
+				labeltot1.setText("" + db.get(x).getTotal_Player());
 				lblSpieler1.setText(db.get(x).getID());
 
 			}
@@ -334,7 +335,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 
 			}
 		});
-		
+
 		buttonSpieler2anzeigen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int x = comboBox_1.getSelectedIndex();
@@ -343,7 +344,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 				label_5.setText("" + db.get(x).getAthletik_total());
 				label_7.setText("" + db.get(x).getPersönlichkeit_total());
 				db.get(x).setTotal();
-				label.setText(""+db.get(x).getTotal_Player());
+				label.setText("" + db.get(x).getTotal_Player());
 				labelSpieler2.setText(db.get(x).getID());
 			}
 		});
@@ -380,8 +381,6 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 	public void loadDB() {
 		File file = new File("playersDB");
 
-		// Zuvor alle mit dem File assoziierten Streams schließen...
-
 		if (file.exists()) {
 
 			try {
@@ -392,14 +391,14 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 
 			comboBox.removeAllItems();
 			comboBox_1.removeAllItems();
-			
+
 			for (int i = 0; i < db.size(); i++) {
 				Player p = db.get(i);
 				comboBox.addItem(p.getID());
 				comboBox_1.addItem(p.getID());
 			}
-			//JOptionPane.showMessageDialog(null, "Datenbank geladen!");
-			
+			// JOptionPane.showMessageDialog(null, "Datenbank geladen!");
+
 		} else {
 			JOptionPane.showMessageDialog(null, "Keine Datenbank vorhanden!");
 			System.out.println("NO DATABSE!");

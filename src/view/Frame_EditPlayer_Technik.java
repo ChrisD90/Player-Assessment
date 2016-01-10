@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import model.Player;
@@ -21,6 +20,11 @@ import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
 public class Frame_EditPlayer_Technik extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -942683998204613511L;
 
 	private JPanel contentPane;
 

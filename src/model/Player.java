@@ -11,6 +11,11 @@ import java.io.Serializable;
  */
 public class Player implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	// GESAMTBEWERTUNG
 	double[] tot = new double[5];
 	// 0 --> total_Player
