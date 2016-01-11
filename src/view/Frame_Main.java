@@ -47,7 +47,7 @@ public class Frame_Main extends JFrame implements ListSelectionListener {
 	private JButton buttonSpieler1anzeigen;
 	private JButton btnDeleteDb;
 	private JButton btnNewPlayer;
-	JComboBox<String> comboBox;
+	private JComboBox<String> comboBox;
 	private JLabel lblTechnik_1;
 	private JLabel lbltech;
 	private JLabel lblTaktik;

@@ -218,12 +218,12 @@ public class Frame_EditPlayer_Persönlichkeit extends JFrame {
 		JButton btnTaktik = new JButton("Taktik");
 		btnTaktik.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (saved()) {
-					Frame_EditPlayer_Taktik frame = new Frame_EditPlayer_Taktik(
-							db, p);
-					frame.setVisible(true);
-					dispose();
-				}
+
+				Frame_EditPlayer_Taktik frame = new Frame_EditPlayer_Taktik(db,
+						p);
+				frame.setVisible(true);
+				dispose();
+
 			}
 		});
 
@@ -233,12 +233,12 @@ public class Frame_EditPlayer_Persönlichkeit extends JFrame {
 		JButton btnAthletik = new JButton("Athletik");
 		btnAthletik.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (saved()) {
-					Frame_EditPlayer_Athletik frame = new Frame_EditPlayer_Athletik(
-							db, p);
-					frame.setVisible(true);
-					dispose();
-				}
+
+				Frame_EditPlayer_Athletik frame = new Frame_EditPlayer_Athletik(
+						db, p);
+				frame.setVisible(true);
+				dispose();
+
 			}
 		});
 		btnAthletik.setBounds(12, 458, 105, 23);
@@ -256,12 +256,12 @@ public class Frame_EditPlayer_Persönlichkeit extends JFrame {
 		JButton btnTechnik = new JButton("Technik");
 		btnTechnik.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (saved()) {
-					Frame_EditPlayer_Technik frame = new Frame_EditPlayer_Technik(
-							db, p);
-					frame.setVisible(true);
-					dispose();
-				}
+
+				Frame_EditPlayer_Technik frame = new Frame_EditPlayer_Technik(
+						db, p);
+				frame.setVisible(true);
+				dispose();
+
 			}
 		});
 		btnTechnik.setBounds(12, 388, 105, 23);
@@ -284,17 +284,16 @@ public class Frame_EditPlayer_Persönlichkeit extends JFrame {
 		slider_eltern.setBounds(580, 331, 200, 26);
 		contentPane.add(slider_eltern);
 
-		JButton btnAbbrechen = new JButton("Abbrechen");
-		btnAbbrechen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Frame_Main fm = new Frame_Main();
-				fm.setVisible(true);
-				fm.updateDB(db);
-				dispose();
+		JButton btnBearbeiten = new JButton("Bearbeiten");
+		btnBearbeiten.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO
+				// Spielername ändern können
 			}
 		});
-		btnAbbrechen.setBounds(500, 536, 89, 23);
-		contentPane.add(btnAbbrechen);
+		btnBearbeiten.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnBearbeiten.setBounds(12, 206, 83, 23);
+		contentPane.add(btnBearbeiten);
 
 		btnOk.addActionListener(new ActionListener() {
 
@@ -327,12 +326,12 @@ public class Frame_EditPlayer_Persönlichkeit extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (saved()) {
-					Frame_Main fm = new Frame_Main();
-					fm.setVisible(true);
-					fm.updateDB(db);
-					dispose();
-				}
+
+				Frame_Main fm = new Frame_Main();
+				fm.setVisible(true);
+				fm.updateDB(db);
+				dispose();
+
 			}
 		});
 

@@ -463,5 +463,9 @@ public class Player implements Serializable {
 	public String getID() {
 		return id;
 	}
+	
+	public void setBirthday(String s) {
+		this.birthday = s;
+	}
 
 }
