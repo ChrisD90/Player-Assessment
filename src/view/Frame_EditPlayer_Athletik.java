@@ -153,6 +153,7 @@ public class Frame_EditPlayer_Athletik extends JFrame {
 		contentPane.add(lblTotal);
 
 		JLabel label_total = new JLabel("---");
+		label_total.setFont(new Font("Tahoma", Font.BOLD, 11));
 		label_total.setHorizontalAlignment(SwingConstants.CENTER);
 		label_total.setBounds(500, 352, 46, 14);
 		contentPane.add(label_total);
@@ -187,29 +188,33 @@ public class Frame_EditPlayer_Athletik extends JFrame {
 		label_vorname.setBounds(103, 84, 128, 14);
 		contentPane.add(label_vorname);
 
-		JLabel old_ball = new JLabel("");
+		JLabel old_ball = new JLabel(""+p.getAthletik_bewegungsschnelligkeit());
 		old_ball.setBounds(428, 84, 46, 14);
 		contentPane.add(old_ball);
 
-		JLabel old_pass = new JLabel("");
+		JLabel old_pass = new JLabel(""+p.getAthletik_aktionsschnelligkeit());
 		old_pass.setBounds(428, 126, 46, 14);
 		contentPane.add(old_pass);
 
-		JLabel old_dribbling = new JLabel("");
+		JLabel old_dribbling = new JLabel(""+p.getAthletik_bewegungsschnelligkeit());
 		old_dribbling.setBounds(428, 167, 46, 14);
 		contentPane.add(old_dribbling);
 
-		JLabel old_beid = new JLabel("");
+		JLabel old_beid = new JLabel(""+p.getAthletik_kraft());
 		old_beid.setBounds(428, 210, 46, 14);
 		contentPane.add(old_beid);
 
-		JLabel old_kopf = new JLabel("");
+		JLabel old_kopf = new JLabel(""+p.getAthletik_koordination());
 		old_kopf.setBounds(428, 252, 46, 14);
 		contentPane.add(old_kopf);
 
-		JLabel old_schuss = new JLabel("");
+		JLabel old_schuss = new JLabel(""+p.getAthletik_biologAlter());
 		old_schuss.setBounds(428, 294, 46, 14);
 		contentPane.add(old_schuss);
+		
+		JLabel label_Old_Total = new JLabel(""+p.getAthletik_total());
+		label_Old_Total.setBounds(428, 352, 46, 14);
+		contentPane.add(label_Old_Total);
 
 		JButton btnTechnik = new JButton("Technik");
 		btnTechnik.addActionListener(new ActionListener() {

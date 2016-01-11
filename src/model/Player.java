@@ -296,27 +296,27 @@ public class Player implements Serializable {
 		return ath[0];
 	}
 	
-	public double getAthletik_bewegungsschnelligkeit(double x) {
+	public double getAthletik_bewegungsschnelligkeit() {
 		return ath[1];
 	}
 	
-	public double getAthletik_aktionsschnelligkeit(double x) {
+	public double getAthletik_aktionsschnelligkeit() {
 		return ath[2];
 	}
 	
-	public double getAthletik_aktionsschnelligkeitZeit(double x) {
+	public double getAthletik_aktionsschnelligkeitZeit() {
 		return ath[3];
 	}
 	
-	public double getAthletik_kraft(double x) {
+	public double getAthletik_kraft() {
 		return ath[4];
 	}
 	
-	public double getAthletik_koordination(double x) {
+	public double getAthletik_koordination() {
 		return ath[5];
 	}
 	
-	public double getAthletik_biologAlter(double x) {
+	public double getAthletik_biologAlter() {
 		return ath[6];
 	}
 	// --------------------------------------------------------------

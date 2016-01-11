@@ -154,6 +154,7 @@ public class Frame_EditPlayer_Persönlichkeit extends JFrame {
 		contentPane.add(lblTotal);
 
 		JLabel label_total = new JLabel("---");
+		label_total.setFont(new Font("Tahoma", Font.BOLD, 11));
 		label_total.setHorizontalAlignment(SwingConstants.CENTER);
 		label_total.setBounds(500, 381, 46, 14);
 		contentPane.add(label_total);
@@ -215,6 +216,10 @@ public class Frame_EditPlayer_Persönlichkeit extends JFrame {
 		old_schuss.setBounds(428, 294, 46, 14);
 		contentPane.add(old_schuss);
 
+		JLabel label_Old_Total = new JLabel(""+p.getPersönlichkeit_total());
+		label_Old_Total.setBounds(428, 381, 46, 14);
+		contentPane.add(label_Old_Total);
+		
 		JButton btnTaktik = new JButton("Taktik");
 		btnTaktik.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

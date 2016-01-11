@@ -150,6 +150,7 @@ public class Frame_EditPlayer_Technik extends JFrame {
 		contentPane.add(lblTotal);
 
 		JLabel label_total = new JLabel("---");
+		label_total.setFont(new Font("Tahoma", Font.BOLD, 11));
 		label_total.setHorizontalAlignment(SwingConstants.CENTER);
 		label_total.setBounds(500, 352, 46, 14);
 		contentPane.add(label_total);
@@ -246,6 +247,10 @@ public class Frame_EditPlayer_Technik extends JFrame {
 		btnTechnik.setEnabled(false);
 		btnTechnik.setBounds(12, 388, 105, 23);
 		contentPane.add(btnTechnik);
+		
+		JLabel label_Old_Total = new JLabel(""+p.getTechnik_total());
+		label_Old_Total.setBounds(428, 352, 46, 14);
+		contentPane.add(label_Old_Total);
 		
 		btnOk.addActionListener(new ActionListener() {
 

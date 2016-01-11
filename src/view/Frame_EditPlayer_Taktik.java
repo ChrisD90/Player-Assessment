@@ -151,6 +151,7 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		contentPane.add(lblTotal);
 
 		JLabel label_total = new JLabel("---");
+		label_total.setFont(new Font("Tahoma", Font.BOLD, 11));
 		label_total.setHorizontalAlignment(SwingConstants.CENTER);
 		label_total.setBounds(500, 504, 46, 14);
 		contentPane.add(label_total);
@@ -185,27 +186,27 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		label_vorname.setBounds(103, 84, 128, 14);
 		contentPane.add(label_vorname);
 		
-		JLabel old_1off = new JLabel("");
+		JLabel old_1off = new JLabel(""+p.getTaktik_1off());
 		old_1off.setBounds(428, 84, 46, 14);
 		contentPane.add(old_1off);
 		
-		JLabel old_1def = new JLabel("");
+		JLabel old_1def = new JLabel(""+p.getTaktik_1def());
 		old_1def.setBounds(428, 126, 46, 14);
 		contentPane.add(old_1def);
 		
-		JLabel old_groupOff = new JLabel("");
+		JLabel old_groupOff = new JLabel(""+p.getTaktik_gruppeOff());
 		old_groupOff.setBounds(428, 167, 46, 14);
 		contentPane.add(old_groupOff);
 		
-		JLabel old_groupDef = new JLabel("");
+		JLabel old_groupDef = new JLabel(""+p.getTaktik_gruppeDef());
 		old_groupDef.setBounds(428, 210, 46, 14);
 		contentPane.add(old_groupDef);
 		
-		JLabel old_frei = new JLabel("");
+		JLabel old_frei = new JLabel(""+p.getTaktik_freilaufen());
 		old_frei.setBounds(428, 252, 46, 14);
 		contentPane.add(old_frei);
 		
-		JLabel old_umOff = new JLabel("");
+		JLabel old_umOff = new JLabel(""+p.getTaktik_umschaltOff());
 		old_umOff.setBounds(428, 294, 46, 14);
 		contentPane.add(old_umOff);
 		
@@ -225,19 +226,19 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		lblSpielerfahrung.setBounds(295, 462, 123, 14);
 		contentPane.add(lblSpielerfahrung);
 		
-		JLabel old_umDef = new JLabel("0.0");
+		JLabel old_umDef = new JLabel(""+p.getTaktik_umschaltDef());
 		old_umDef.setBounds(428, 336, 46, 14);
 		contentPane.add(old_umDef);
 		
-		JLabel old_zug = new JLabel("0.0");
+		JLabel old_zug = new JLabel(""+p.getTaktik_zugZumTor());
 		old_zug.setBounds(428, 378, 46, 14);
 		contentPane.add(old_zug);
 		
-		JLabel old_kreat = new JLabel("0.0");
+		JLabel old_kreat = new JLabel(""+p.getTaktik_kreativität());
 		old_kreat.setBounds(428, 420, 46, 14);
 		contentPane.add(old_kreat);
 		
-		JLabel old_spielerf = new JLabel("0.0");
+		JLabel old_spielerf = new JLabel(""+p.getTaktik_spielerfahrung());
 		old_spielerf.setBounds(428, 462, 46, 14);
 		contentPane.add(old_spielerf);
 		
@@ -276,6 +277,10 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		JSlider slider_spieler = new JSlider();
 		slider_spieler.setBounds(580, 459, 200, 26);
 		contentPane.add(slider_spieler);
+		
+		JLabel label_Old_Total = new JLabel(""+p.getTaktik_total());
+		label_Old_Total.setBounds(428, 504, 46, 14);
+		contentPane.add(label_Old_Total);
 		
 		JButton button = new JButton("Technik");
 		button.addActionListener(new ActionListener() {
