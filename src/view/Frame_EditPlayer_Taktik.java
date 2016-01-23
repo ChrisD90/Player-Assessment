@@ -96,7 +96,7 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		lblBeidfigkeit.setBounds(295, 210, 123, 14);
 		contentPane.add(lblBeidfigkeit);
 
-		JLabel lblSchusstechnik = new JLabel("Umschalten offensiv");
+		JLabel lblSchusstechnik = new JLabel("positionsspezifische Taktik");
 		lblSchusstechnik.setBounds(295, 294, 123, 14);
 		contentPane.add(lblSchusstechnik);
 
@@ -105,10 +105,6 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 				.setModel(new SpinnerNumberModel(0, 0.0, 10.0, 1.0));
 		spinner_off1.setBounds(500, 81, 50, 20);
 		contentPane.add(spinner_off1);
-
-		JSlider slider_1off = new JSlider();
-		slider_1off.setBounds(580, 76, 200, 26);
-		contentPane.add(slider_1off);
 
 		JSpinner spinner_def1 = new JSpinner();
 		spinner_def1.setModel(new SpinnerNumberModel(0, 0.0, 10.0, 1.0));
@@ -130,22 +126,6 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		spinner_umschalt.setBounds(500, 294, 50, 20);
 		contentPane.add(spinner_umschalt);
 
-		JSlider slider_1def = new JSlider();
-		slider_1def.setBounds(580, 122, 200, 26);
-		contentPane.add(slider_1def);
-
-		JSlider slider_gruppeOff = new JSlider();
-		slider_gruppeOff.setBounds(580, 164, 200, 26);
-		contentPane.add(slider_gruppeOff);
-
-		JSlider slider_gruppeDef = new JSlider();
-		slider_gruppeDef.setBounds(580, 207, 200, 26);
-		contentPane.add(slider_gruppeDef);
-
-		JSlider slider_umschaltOff = new JSlider();
-		slider_umschaltOff.setBounds(580, 294, 200, 26);
-		contentPane.add(slider_umschaltOff);
-
 		JLabel lblTotal = new JLabel("TOTAL:");
 		lblTotal.setBounds(295, 504, 46, 14);
 		contentPane.add(lblTotal);
@@ -161,7 +141,7 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		btnBack.setBounds(12, 537, 107, 23);
 		contentPane.add(btnBack);
 
-		JLabel lblKopfball = new JLabel("Freilaufen");
+		JLabel lblKopfball = new JLabel("Mannschaftstaktik");
 		lblKopfball.setBounds(295, 252, 123, 14);
 		contentPane.add(lblKopfball);
 
@@ -169,10 +149,6 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		spinner_frei.setModel(new SpinnerNumberModel(0, 0.0, 10.0, 1.0));
 		spinner_frei.setBounds(500, 249, 50, 20);
 		contentPane.add(spinner_frei);
-
-		JSlider slider_frei = new JSlider();
-		slider_frei.setBounds(580, 249, 200, 26);
-		contentPane.add(slider_frei);
 		
 		JLabel label_geb = new JLabel(p.getBirthday());
 		label_geb.setBounds(103, 167, 128, 14);
@@ -210,21 +186,17 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		old_umOff.setBounds(428, 294, 46, 14);
 		contentPane.add(old_umOff);
 		
-		JLabel lblUmschaltenDefensiv = new JLabel("Umschalten defensiv");
+		JLabel lblUmschaltenDefensiv = new JLabel("Umschalterverhalten");
 		lblUmschaltenDefensiv.setBounds(295, 336, 123, 14);
 		contentPane.add(lblUmschaltenDefensiv);
 		
-		JLabel lblZugZumTor = new JLabel("Zug zum Tor");
+		JLabel lblZugZumTor = new JLabel("taktische Kognition");
 		lblZugZumTor.setBounds(295, 378, 123, 14);
 		contentPane.add(lblZugZumTor);
 		
-		JLabel lblKreativitt = new JLabel("Kreativit\u00E4t");
+		JLabel lblKreativitt = new JLabel("taktische Subtitlit\u00E4t");
 		lblKreativitt.setBounds(295, 420, 123, 14);
 		contentPane.add(lblKreativitt);
-		
-		JLabel lblSpielerfahrung = new JLabel("Spielerfahrung");
-		lblSpielerfahrung.setBounds(295, 462, 123, 14);
-		contentPane.add(lblSpielerfahrung);
 		
 		JLabel old_umDef = new JLabel(""+p.getTaktik_umschaltDef());
 		old_umDef.setBounds(428, 336, 46, 14);
@@ -237,10 +209,6 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		JLabel old_kreat = new JLabel(""+p.getTaktik_kreativität());
 		old_kreat.setBounds(428, 420, 46, 14);
 		contentPane.add(old_kreat);
-		
-		JLabel old_spielerf = new JLabel(""+p.getTaktik_spielerfahrung());
-		old_spielerf.setBounds(428, 462, 46, 14);
-		contentPane.add(old_spielerf);
 		
 		JSpinner spinner_umschaltDef = new JSpinner();
 		spinner_umschaltDef.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
@@ -256,27 +224,6 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		spinner_kreat.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_kreat.setBounds(500, 417, 50, 20);
 		contentPane.add(spinner_kreat);
-		
-		JSpinner spinner_spieler = new JSpinner();
-		spinner_spieler.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
-		spinner_spieler.setBounds(500, 459, 50, 20);
-		contentPane.add(spinner_spieler);
-		
-		JSlider slider_UmschaltDef = new JSlider();
-		slider_UmschaltDef.setBounds(580, 331, 200, 26);
-		contentPane.add(slider_UmschaltDef);
-		
-		JSlider slider_zug = new JSlider();
-		slider_zug.setBounds(580, 375, 200, 26);
-		contentPane.add(slider_zug);
-		
-		JSlider slider_kreativ = new JSlider();
-		slider_kreativ.setBounds(580, 417, 200, 26);
-		contentPane.add(slider_kreativ);
-		
-		JSlider slider_spieler = new JSlider();
-		slider_spieler.setBounds(580, 459, 200, 26);
-		contentPane.add(slider_spieler);
 		
 		JLabel label_Old_Total = new JLabel(""+p.getTaktik_total());
 		label_Old_Total.setBounds(428, 504, 46, 14);
@@ -324,25 +271,81 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 		btnTaktik.setBounds(12, 425, 105, 23);
 		contentPane.add(btnTaktik);
 		
+		JLabel label = new JLabel("Gewichtung");
+		label.setBounds(626, 49, 107, 16);
+		contentPane.add(label);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(626, 78, 71, 22);
+		contentPane.add(spinner);
+		
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setBounds(626, 120, 71, 22);
+		contentPane.add(spinner_1);
+		
+		JSpinner spinner_2 = new JSpinner();
+		spinner_2.setBounds(626, 161, 71, 22);
+		contentPane.add(spinner_2);
+		
+		JSpinner spinner_3 = new JSpinner();
+		spinner_3.setBounds(626, 204, 71, 22);
+		contentPane.add(spinner_3);
+		
+		JSpinner spinner_4 = new JSpinner();
+		spinner_4.setBounds(626, 246, 71, 22);
+		contentPane.add(spinner_4);
+		
+		JSpinner spinner_5 = new JSpinner();
+		spinner_5.setBounds(626, 292, 71, 22);
+		contentPane.add(spinner_5);
+		
+		JSpinner spinner_6 = new JSpinner();
+		spinner_6.setBounds(626, 332, 71, 22);
+		contentPane.add(spinner_6);
+		
+		JSpinner spinner_7 = new JSpinner();
+		spinner_7.setBounds(626, 374, 71, 22);
+		contentPane.add(spinner_7);
+		
+		JSpinner spinner_8 = new JSpinner();
+		spinner_8.setBounds(626, 416, 71, 22);
+		contentPane.add(spinner_8);
+		
 		btnOk.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				p.setTaktik_1off(((double) spinner_off1.getValue() * slider_1off.getValue())/100);
-				p.setTaktik_1def(((double) spinner_def1.getValue() * slider_1def.getValue())/100);
-				p.setTaktik_gruppeOff(((double) spinner_gruppeoff.getValue() * slider_gruppeOff.getValue())/100);
-				p.setTaktik_gruppeDef(((double) spinner_gruppeDef.getValue() * slider_gruppeDef.getValue())/100);
-				p.setTaktik_freilaufen(((double) spinner_frei.getValue() * slider_frei.getValue())/100);
-				p.setTaktik_umschaltOff(((double) spinner_umschalt.getValue() * slider_umschaltOff.getValue())/100);
-				p.setTaktik_umschaltDef(((double) spinner_umschaltDef.getValue() * slider_UmschaltDef.getValue())/100);
-				p.setTaktik_zugZumTor(((double) spinner_zug.getValue() * slider_zug.getValue())/100);
-				p.setTaktik_kreativität(((double) spinner_kreat.getValue() * slider_kreativ.getValue())/100);
-				p.setTaktik_spielerfahrung(((double) spinner_spieler.getValue() * slider_spieler.getValue())/100);
+				double a = (double) spinner.getValue()/100;
+				double b = (double) spinner_1.getValue()/100;
+				double c = (double) spinner_2.getValue()/100;
+				double d = (double) spinner_3.getValue()/100;
+				double e1 = (double) spinner_4.getValue()/100;
+				double f = (double) spinner_5.getValue()/100;
+				double g = (double) spinner_6.getValue()/100;
+				double h = (double) spinner_7.getValue()/100;
+				double i = (double) spinner_8.getValue()/100;
+				
+				
+				double sum = a+b+c+d+e1+f+g+h+i;
+				
+		
+				if(sum == 1) {
+				
+				p.setTaktik_1off((double) spinner_off1.getValue() * a);
+				p.setTaktik_1def((double) spinner_def1.getValue() * b);
+				p.setTaktik_gruppeOff((double) spinner_gruppeoff.getValue() * c);
+				p.setTaktik_gruppeDef((double) spinner_gruppeDef.getValue() * d);
+				p.setTaktik_freilaufen((double) spinner_frei.getValue() * e1);
+				p.setTaktik_umschaltOff((double) spinner_umschalt.getValue() * f);
+				p.setTaktik_umschaltDef((double) spinner_umschaltDef.getValue() * g);
+				p.setTaktik_zugZumTor((double) spinner_zug.getValue() * h);
+				p.setTaktik_kreativität((double) spinner_kreat.getValue() * i);
+				
 				p.setTaktik_total();
 								
 				label_total.setText(""+p.getTaktik_total());
-				
+				}
 			}
 		});
 
@@ -364,7 +367,4 @@ public class Frame_EditPlayer_Taktik extends JFrame {
 	public LinkedList<Player> getdb() {
 		return db;
 	}
-	
-	
-
 }

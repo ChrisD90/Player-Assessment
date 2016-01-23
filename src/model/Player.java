@@ -80,7 +80,7 @@ public class Player implements Serializable {
 	public Player(String name, String prename, String birthday) {
 
 		this.name = name;
-		this.prename = name;
+		this.prename = prename;
 		this.birthday = birthday;
 
 		id = name + ", " + prename + ": " + birthday;
@@ -94,7 +94,7 @@ public class Player implements Serializable {
 		for (int i = 1; i < tech.length; i++) {
 			x += tech[i];
 		}
-		tech[0] = x / 6;
+		tech[0] = x;
 
 		System.out.println("Technik_total: " + tech[0]);
 	}
@@ -161,7 +161,7 @@ public class Player implements Serializable {
 		for (int i = 1; i < tak.length; i++) {
 			x += tak[i];
 		}
-		tak[0] = x / 10;
+		tak[0] = x;
 
 		System.out.println("Technik_total: " + tak[0]);
 	}
@@ -262,7 +262,7 @@ public class Player implements Serializable {
 		for (int i = 1; i < ath.length; i++) {
 			x += ath[i];
 		}
-		ath[0] = x / 6;
+		ath[0] = x;
 
 		System.out.println("Athletik_total: " + ath[0]);
 	}
@@ -327,7 +327,7 @@ public class Player implements Serializable {
 		for (int i = 1; i < pers.length; i++) {
 			x += pers[i];
 		}
-		pers[0] = x / 7;
+		pers[0] = x;
 
 		System.out.println("Persönlichkeit_total: " + pers[0]);
 	}
